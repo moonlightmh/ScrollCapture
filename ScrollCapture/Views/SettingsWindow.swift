@@ -24,7 +24,7 @@ struct GeneralSettingsView: View {
     @AppStorage(Constants.StorageKeys.lastExportPath) var lastExportPath: String = ""
 
     var body: some View {
-        Form {
+        let form = Form {
             Section("导出设置") {
                 Picker("默认格式", selection: $exportFormat) {
                     Text("PNG").tag("PNG")
@@ -49,7 +49,7 @@ struct GeneralSettingsView: View {
                 }
             }
         }
-        .formStyle(.grouped)
+        return form
     }
 
     private func selectExportPath() {
@@ -115,7 +115,6 @@ struct StitchSettingsView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .formStyle(.grouped)
     }
 }
 

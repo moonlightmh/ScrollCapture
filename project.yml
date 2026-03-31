@@ -1,0 +1,78 @@
+name: ScrollCapture
+options:
+  bundleIdPrefix: com.moonlightmh
+  deploymentTarget:
+    macOS: "12.0"
+  generateEmptyDirectories: true
+  groupSortPosition: top
+
+settings:
+  base:
+    PRODUCT_NAME: ScrollCapture
+    SWIFT_VERSION: "5.7"
+    ENABLE_HARDENED_RUNTIME: NO
+    CODE_SIGN_STYLE: Automatic
+    # OpenCV settings (Homebrew dylib)
+    CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+    CLANG_CXX_LIBRARY: "libc++"
+    HEADER_SEARCH_PATHS:
+      - /opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4
+    LIBRARY_SEARCH_PATHS:
+      - /opt/homebrew/Cellar/opencv/4.13.0_7/lib
+    OTHER_LDFLAGS:
+      - -lopencv_core
+      - -lopencv_imgproc
+      - -lopencv_imgcodecs
+      - -lopencv_features2d
+      - -lopencv_calib3d
+      - -lopencv_flann
+    # Fix OpenCV/Apple macro conflicts
+    GCC_PREPROCESSOR_DEFINITIONS:
+      - HAVE_OPENCV=1
+      - NO=0
+
+targets:
+  ScrollCapture:
+    type: application
+    platform: macOS
+    sources:
+      - path: ScrollCapture
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        INFOPLIST_FILE: ScrollCapture/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.moonlightmh.ScrollCapture
+        LSUIElement: true
+        CODE_SIGN_ENTITLEMENTS: ""
+        SWIFT_OBJC_INTERFACE_HEADER_NAME: ScrollCapture-Swift.h
+        SWIFT_OBJC_BRIDGING_HEADER: ScrollCapture/ScrollCapture-Bridging-Header.h
+    info:
+      path: ScrollCapture/Info.plist
+      properties:
+        CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
+        CFBundleExecutable: "$(EXECUTABLE_NAME)"
+        CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundleName: "$(PRODUCT_NAME)"
+        CFBundlePackageType: "$(PRODUCT_BUNDLE_PACKAGE_TYPE)"
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        NSHumanReadableCopyright: "Copyright © 2026. All rights reserved."
+        NSPrincipalClass: NSApplication
+        LSUIElement: true
+
+  ScrollCaptureTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: ScrollCaptureTests
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.moonlightmh.ScrollCaptureTests
+        TEST_HOST: ""
+    dependencies:
+      - target: ScrollCapture

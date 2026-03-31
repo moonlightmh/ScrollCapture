@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01546B60E129885213000C31 /* SettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131177A957EE14297074DBEB /* SettingsWindow.swift */; };
+		060C43CDD89656F0CEB869BE /* CaptureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8E13CA439B0233C48CBB10 /* CaptureState.swift */; };
+		38CE9A6ED5C9A23D6A75F317 /* StitchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED38F914B786A5D133908FCE /* StitchResult.swift */; };
+		5416027230383A4A6210D172 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB6C1E32B1639540262360 /* CaptureSession.swift */; };
+		59D7DB9D50377717D378E084 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */; };
+		5E548F4081DABD900503DB79 /* TempFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60986BF2C8363C1862DBE5 /* TempFileManager.swift */; };
+		681E775CBBE68BA59031A9A3 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */; };
+		6E6324609671CEB5A187829B /* SelectionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */; };
+		6F140E71D7A6A777B9665993 /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6130FC6C596BA540492A1000 /* ExportManager.swift */; };
+		8CE86313EC4DEA8BFB6D0B0E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7499055B67BE34058992839 /* AppState.swift */; };
+		9BB4DF0DF26FF146CA2481FF /* ScrollCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3980D70D0B8F076CF1B61 /* ScrollCaptureApp.swift */; };
+		A6F8EF7EE34FA25D6921AB0F /* StitchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F29BEED8638758146C4145 /* StitchEngine.swift */; };
+		B2ED3409EBBC15C6FE7DDF77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36E7DE9C850CFCC91AF393 /* AppDelegate.swift */; };
+		B46891D3315D521AFDE909B7 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805595565AC1D76EFDFEBD4A /* ToastView.swift */; };
+		B61539E8B4D9CE8572F55A77 /* SelectionOverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4A3309831341ACADA923A /* SelectionOverlayController.swift */; };
+		B935AB7C78C9ECDA070079BB /* CaptureSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFA8EA07B98F9BC8C669B97 /* CaptureSessionTests.swift */; };
+		BE1F360A2E590B78DF6999F0 /* StitchEngineBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9A674396EAC49041DF04FB93 /* StitchEngineBridge.mm */; };
+		C1A68B8E68C740AD1DCCAFDF /* PermissionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C8917881BDFED7FA20A013 /* PermissionChecker.swift */; };
+		D2A17A295E7C8E606FA99D34 /* CaptureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82058B3AC0C8B4CF6898D40 /* CaptureStateTests.swift */; };
+		D4242461BFC86439D6B99BBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC0648DFAE12C84317F82B /* Constants.swift */; };
+		D60817BC1FA8A19351B19DBE /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CA8E08B907A568FDBF1F6 /* CaptureManager.swift */; };
+		F8DDF523C017985C0BE8E66A /* ToastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CC36C33B72AE532309C7F /* ToastController.swift */; };
+		FF050838FDA48BB770E9D3BF /* StitchResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93FFDD58D050C2682CB8A6 /* StitchResultTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF1AE2A6A3972640295187AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9206D351D64C2B228A7C954A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE958F7B7290CEF10CA08399;
+			remoteInfo = ScrollCapture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04AC0648DFAE12C84317F82B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0F36E7DE9C850CFCC91AF393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FBB6C1E32B1639540262360 /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		10C8917881BDFED7FA20A013 /* PermissionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionChecker.swift; sourceTree = "<group>"; };
+		131177A957EE14297074DBEB /* SettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWindow.swift; sourceTree = "<group>"; };
+		1F8124CA4960773D1DC71DEE /* StitchEngineBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StitchEngineBridge.h; sourceTree = "<group>"; };
+		384CA8E08B907A568FDBF1F6 /* CaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureManager.swift; sourceTree = "<group>"; };
+		4F8E13CA439B0233C48CBB10 /* CaptureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureState.swift; sourceTree = "<group>"; };
+		5AFA8EA07B98F9BC8C669B97 /* CaptureSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionTests.swift; sourceTree = "<group>"; };
+		6130FC6C596BA540492A1000 /* ExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportManager.swift; sourceTree = "<group>"; };
+		7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOverlayView.swift; sourceTree = "<group>"; };
+		805595565AC1D76EFDFEBD4A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		84E4A3309831341ACADA923A /* SelectionOverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOverlayController.swift; sourceTree = "<group>"; };
+		8EE3980D70D0B8F076CF1B61 /* ScrollCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCaptureApp.swift; sourceTree = "<group>"; };
+		9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		9A674396EAC49041DF04FB93 /* StitchEngineBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = StitchEngineBridge.mm; sourceTree = "<group>"; };
+		9B1CC36C33B72AE532309C7F /* ToastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastController.swift; sourceTree = "<group>"; };
+		9B8A3C7E735FFA26A8D8B751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9F87C6E72A790EE5F51D4883 /* ScrollCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F29BEED8638758146C4145 /* StitchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchEngine.swift; sourceTree = "<group>"; };
+		D7499055B67BE34058992839 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DC8A72966DAC64457B49D6C2 /* ScrollCapture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScrollCapture-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7B78793EE02F8C1CCEF1267 /* ScrollCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED38F914B786A5D133908FCE /* StitchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchResult.swift; sourceTree = "<group>"; };
+		EE93FFDD58D050C2682CB8A6 /* StitchResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchResultTests.swift; sourceTree = "<group>"; };
+		F82058B3AC0C8B4CF6898D40 /* CaptureStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureStateTests.swift; sourceTree = "<group>"; };
+		FA60986BF2C8363C1862DBE5 /* TempFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFileManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		28E605D5802811491C3DFD8F /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				C3F29BEED8638758146C4145 /* StitchEngine.swift */,
+				1F8124CA4960773D1DC71DEE /* StitchEngineBridge.h */,
+				9A674396EAC49041DF04FB93 /* StitchEngineBridge.mm */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		29E3177AFAE3CCC9DD44BCD3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				384CA8E08B907A568FDBF1F6 /* CaptureManager.swift */,
+				6130FC6C596BA540492A1000 /* ExportManager.swift */,
+				9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */,
+				977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		39A4A328382A5E785D688C9C /* ScrollCaptureTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFA8EA07B98F9BC8C669B97 /* CaptureSessionTests.swift */,
+				F82058B3AC0C8B4CF6898D40 /* CaptureStateTests.swift */,
+				EE93FFDD58D050C2682CB8A6 /* StitchResultTests.swift */,
+			);
+			path = ScrollCaptureTests;
+			sourceTree = "<group>";
+		};
+		3C7E56B2A7C1D44B144732BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0F36E7DE9C850CFCC91AF393 /* AppDelegate.swift */,
+				04AC0648DFAE12C84317F82B /* Constants.swift */,
+				8EE3980D70D0B8F076CF1B61 /* ScrollCaptureApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		40BC7D263F92B3A16B35B9F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		694C06230B025B2177264231 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7499055B67BE34058992839 /* AppState.swift */,
+				0FBB6C1E32B1639540262360 /* CaptureSession.swift */,
+				4F8E13CA439B0233C48CBB10 /* CaptureState.swift */,
+				ED38F914B786A5D133908FCE /* StitchResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8C4DF0E0D69B8926614AAEF3 /* ScrollCapture */ = {
+			isa = PBXGroup;
+			children = (
+				3C7E56B2A7C1D44B144732BA /* App */,
+				29E3177AFAE3CCC9DD44BCD3 /* Controllers */,
+				28E605D5802811491C3DFD8F /* Engine */,
+				694C06230B025B2177264231 /* Models */,
+				40BC7D263F92B3A16B35B9F7 /* Resources */,
+				C0B9B2382A2184A134B905A5 /* Utils */,
+				A8289028DF1533A9F6B9BAB8 /* Vendor */,
+				A78CDF308AA82F3D5283FE9B /* Views */,
+				9B8A3C7E735FFA26A8D8B751 /* Info.plist */,
+				DC8A72966DAC64457B49D6C2 /* ScrollCapture-Bridging-Header.h */,
+			);
+			path = ScrollCapture;
+			sourceTree = "<group>";
+		};
+		9CDFF63379E5609E7BF93B1E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F87C6E72A790EE5F51D4883 /* ScrollCapture.app */,
+				E7B78793EE02F8C1CCEF1267 /* ScrollCaptureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1BB583767EED1CCC73DD282 = {
+			isa = PBXGroup;
+			children = (
+				8C4DF0E0D69B8926614AAEF3 /* ScrollCapture */,
+				39A4A328382A5E785D688C9C /* ScrollCaptureTests */,
+				9CDFF63379E5609E7BF93B1E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A78CDF308AA82F3D5283FE9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84E4A3309831341ACADA923A /* SelectionOverlayController.swift */,
+				7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */,
+				131177A957EE14297074DBEB /* SettingsWindow.swift */,
+				9B1CC36C33B72AE532309C7F /* ToastController.swift */,
+				805595565AC1D76EFDFEBD4A /* ToastView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A8289028DF1533A9F6B9BAB8 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		C0B9B2382A2184A134B905A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10C8917881BDFED7FA20A013 /* PermissionChecker.swift */,
+				FA60986BF2C8363C1862DBE5 /* TempFileManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE958F7B7290CEF10CA08399 /* ScrollCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBA2C635247D1EC0EC02A390 /* Build configuration list for PBXNativeTarget "ScrollCapture" */;
+			buildPhases = (
+				F9C214EFDF81F58BC6D48A9A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollCapture;
+			packageProductDependencies = (
+			);
+			productName = ScrollCapture;
+			productReference = 9F87C6E72A790EE5F51D4883 /* ScrollCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB1150200B94D7C0B122208D /* ScrollCaptureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D09719E616DD976642580B57 /* Build configuration list for PBXNativeTarget "ScrollCaptureTests" */;
+			buildPhases = (
+				783D09C58EC1BB448D38B4D9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15288DF0DB458FAD0386E974 /* PBXTargetDependency */,
+			);
+			name = ScrollCaptureTests;
+			packageProductDependencies = (
+			);
+			productName = ScrollCaptureTests;
+			productReference = E7B78793EE02F8C1CCEF1267 /* ScrollCaptureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9206D351D64C2B228A7C954A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					BE958F7B7290CEF10CA08399 = {
+						ProvisioningStyle = Automatic;
+					};
+					CB1150200B94D7C0B122208D = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EFF3A65C77D2C9FF2150DF6F /* Build configuration list for PBXProject "ScrollCapture" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A1BB583767EED1CCC73DD282;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9CDFF63379E5609E7BF93B1E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE958F7B7290CEF10CA08399 /* ScrollCapture */,
+				CB1150200B94D7C0B122208D /* ScrollCaptureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		783D09C58EC1BB448D38B4D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B935AB7C78C9ECDA070079BB /* CaptureSessionTests.swift in Sources */,
+				D2A17A295E7C8E606FA99D34 /* CaptureStateTests.swift in Sources */,
+				FF050838FDA48BB770E9D3BF /* StitchResultTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9C214EFDF81F58BC6D48A9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2ED3409EBBC15C6FE7DDF77 /* AppDelegate.swift in Sources */,
+				8CE86313EC4DEA8BFB6D0B0E /* AppState.swift in Sources */,
+				D60817BC1FA8A19351B19DBE /* CaptureManager.swift in Sources */,
+				5416027230383A4A6210D172 /* CaptureSession.swift in Sources */,
+				060C43CDD89656F0CEB869BE /* CaptureState.swift in Sources */,
+				D4242461BFC86439D6B99BBA /* Constants.swift in Sources */,
+				6F140E71D7A6A777B9665993 /* ExportManager.swift in Sources */,
+				681E775CBBE68BA59031A9A3 /* HotKeyManager.swift in Sources */,
+				C1A68B8E68C740AD1DCCAFDF /* PermissionChecker.swift in Sources */,
+				9BB4DF0DF26FF146CA2481FF /* ScrollCaptureApp.swift in Sources */,
+				B61539E8B4D9CE8572F55A77 /* SelectionOverlayController.swift in Sources */,
+				6E6324609671CEB5A187829B /* SelectionOverlayView.swift in Sources */,
+				01546B60E129885213000C31 /* SettingsWindow.swift in Sources */,
+				59D7DB9D50377717D378E084 /* StatusItemController.swift in Sources */,
+				A6F8EF7EE34FA25D6921AB0F /* StitchEngine.swift in Sources */,
+				BE1F360A2E590B78DF6999F0 /* StitchEngineBridge.mm in Sources */,
+				38CE9A6ED5C9A23D6A75F317 /* StitchResult.swift in Sources */,
+				5E548F4081DABD900503DB79 /* TempFileManager.swift in Sources */,
+				F8DDF523C017985C0BE8E66A /* ToastController.swift in Sources */,
+				B46891D3315D521AFDE909B7 /* ToastView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15288DF0DB458FAD0386E974 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE958F7B7290CEF10CA08399 /* ScrollCapture */;
+			targetProxy = FF1AE2A6A3972640295187AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E4CD3D23E7418B513248EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonlightmh.ScrollCaptureTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Release;
+		};
+		2C7CF6A89C8B73A688757AC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonlightmh.ScrollCaptureTests;
+				SDKROOT = macosx;
+				TEST_HOST = "";
+			};
+			name = Debug;
+		};
+		799885496AF0BBEC3066A2ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScrollCapture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LSUIElement = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonlightmh.ScrollCapture;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScrollCapture/ScrollCapture-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "ScrollCapture-Swift.h";
+			};
+			name = Debug;
+		};
+		913C76116C94A1C1F1325AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ScrollCapture/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LSUIElement = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moonlightmh.ScrollCapture;
+				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "ScrollCapture/ScrollCapture-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "ScrollCapture-Swift.h";
+			};
+			name = Release;
+		};
+		CE71A1503D2E5F9B110AA6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"HAVE_OPENCV=1",
+					"NO=0",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/opencv/4.13.0_7/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgproc",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_calib3d",
+					"-lopencv_flann",
+				);
+				PRODUCT_NAME = ScrollCapture;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7;
+			};
+			name = Debug;
+		};
+		F3B37DF38BA601673F67A67F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"HAVE_OPENCV=1",
+					"NO=0",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/opencv/4.13.0_7/include/opencv4,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/opencv/4.13.0_7/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"-lopencv_core",
+					"-lopencv_imgproc",
+					"-lopencv_imgcodecs",
+					"-lopencv_features2d",
+					"-lopencv_calib3d",
+					"-lopencv_flann",
+				);
+				PRODUCT_NAME = ScrollCapture;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.7;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D09719E616DD976642580B57 /* Build configuration list for PBXNativeTarget "ScrollCaptureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7CF6A89C8B73A688757AC8 /* Debug */,
+				0E4CD3D23E7418B513248EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFF3A65C77D2C9FF2150DF6F /* Build configuration list for PBXProject "ScrollCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE71A1503D2E5F9B110AA6B7 /* Debug */,
+				F3B37DF38BA601673F67A67F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FBA2C635247D1EC0EC02A390 /* Build configuration list for PBXNativeTarget "ScrollCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				799885496AF0BBEC3066A2ED /* Debug */,
+				913C76116C94A1C1F1325AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9206D351D64C2B228A7C954A /* Project object */;
+}

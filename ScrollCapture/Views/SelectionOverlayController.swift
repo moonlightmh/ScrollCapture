@@ -30,7 +30,11 @@ class SelectionOverlayController: NSObject {
         overlayWindow?.level = .screenSaver
         overlayWindow?.backgroundColor = .clear
         overlayWindow?.ignoresMouseEvents = false
-        overlayWindow?.collectionBehavior = [.canJoinAllApplications, .fullScreenAuxiliary]
+        if #available(macOS 13.0, *) {
+            overlayWindow?.collectionBehavior = [.canJoinAllApplications, .fullScreenAuxiliary]
+        } else {
+            overlayWindow?.collectionBehavior = [.fullScreenAuxiliary]
+        }
 
         // Create SwiftUI view
         let contentView = NSHostingView(rootView: SelectionOverlayView(

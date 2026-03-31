@@ -158,8 +158,8 @@ class StatusItemController {
         let alert = NSAlert()
         alert.messageText = "需要屏幕录制权限"
         alert.informativeText = "ScrollCapture 需要屏幕录制权限才能截取屏幕内容。\n\n请在系统设置 > Privacy > 屏幕录制 中开启 ScrollCapture。"
-        alert.addButtonWithTitle("打开系统设置")
-        alert.addButtonWithTitle("稍后设置")
+        alert.addButton(withTitle: "打开系统设置")
+        alert.addButton(withTitle: "稍后设置")
         alert.alertStyle = .warning
 
         let response = alert.runModal()

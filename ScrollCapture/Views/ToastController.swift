@@ -32,7 +32,11 @@ class ToastController: NSObject {
 
         toastWindow?.level = .floating
         toastWindow?.backgroundColor = .clear
-        toastWindow?.collectionBehavior = [.canJoinAllApplications]
+        if #available(macOS 13.0, *) {
+            toastWindow?.collectionBehavior = [.canJoinAllApplications]
+        } else {
+            toastWindow?.collectionBehavior = []
+        }
 
         // Position near menu bar
         if let screen = NSScreen.main {

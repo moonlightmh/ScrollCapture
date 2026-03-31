@@ -23,9 +23,9 @@ class StitchEngine {
 
     private init() {
         bridge = StitchEngineBridge(
-            templateHeight: Constants.Defaults.templateHeight,
+            templateHeight: Int32(Constants.Defaults.templateHeight),
             matchThreshold: Constants.Defaults.matchThreshold,
-            maxResultHeight: Constants.Defaults.maxResultHeight
+            maxResultHeight: Int32(Constants.Defaults.maxResultHeight)
         )
     }
 

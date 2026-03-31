@@ -1,5 +1,21 @@
+// Fix OpenCV/Apple macro conflict - must be before any Apple includes
+#ifndef NO
+#define NO 0
+#endif
+
 #import "StitchEngineBridge.h"
-#import <opencv2/opencv.hpp>
+
+// Only include needed OpenCV headers (avoid stitching module which conflicts with Apple NO macro)
+#import <opencv2/core.hpp>
+#import <opencv2/imgproc.hpp>
+#import <opencv2/imgcodecs.hpp>
+#import <opencv2/features2d.hpp>
+#import <opencv2/calib3d.hpp>
+#import <opencv2/flann.hpp>
+
+// Restore NO macro for Apple
+#undef NO
+#define NO ((BOOL)0)
 
 @interface StitchResultBridge ()
 @end
