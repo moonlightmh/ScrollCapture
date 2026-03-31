@@ -47,6 +47,7 @@ targets:
         CODE_SIGN_ENTITLEMENTS: ""
         SWIFT_OBJC_INTERFACE_HEADER_NAME: ScrollCapture-Swift.h
         SWIFT_OBJC_BRIDGING_HEADER: ScrollCapture/ScrollCapture-Bridging-Header.h
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: ScrollCapture/Info.plist
       properties:

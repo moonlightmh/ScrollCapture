@@ -12,6 +12,7 @@
 		38CE9A6ED5C9A23D6A75F317 /* StitchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED38F914B786A5D133908FCE /* StitchResult.swift */; };
 		5416027230383A4A6210D172 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB6C1E32B1639540262360 /* CaptureSession.swift */; };
 		59D7DB9D50377717D378E084 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */; };
+		5ACD96778F9F8E8B3B4B9070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BA116E368A564B0F01CEA1B /* Assets.xcassets */; };
 		5E548F4081DABD900503DB79 /* TempFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA60986BF2C8363C1862DBE5 /* TempFileManager.swift */; };
 		681E775CBBE68BA59031A9A3 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */; };
 		6E6324609671CEB5A187829B /* SelectionOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */; };
@@ -56,6 +57,7 @@
 		7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOverlayView.swift; sourceTree = "<group>"; };
 		805595565AC1D76EFDFEBD4A /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		84E4A3309831341ACADA923A /* SelectionOverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOverlayController.swift; sourceTree = "<group>"; };
+		8BA116E368A564B0F01CEA1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EE3980D70D0B8F076CF1B61 /* ScrollCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCaptureApp.swift; sourceTree = "<group>"; };
 		9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
 		977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		40BC7D263F92B3A16B35B9F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8BA116E368A564B0F01CEA1B /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildConfigurationList = FBA2C635247D1EC0EC02A390 /* Build configuration list for PBXNativeTarget "ScrollCapture" */;
 			buildPhases = (
 				F9C214EFDF81F58BC6D48A9A /* Sources */,
+				516031BDB4C86551631214D9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -270,6 +274,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		516031BDB4C86551631214D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACD96778F9F8E8B3B4B9070 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		783D09C58EC1BB448D38B4D9 /* Sources */ = {
