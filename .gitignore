@@ -5,12 +5,21 @@ xcuserdata/
 *.xcworkspace/xcuserdata/
 *.xcworkspace/contents.xcworkspacedata
 
-# Build
-build/
-DerivedData/
+## Obj-C/Swift specific
+*.hmap
+
+## App packaging
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Build
+build/
+DerivedData/
 
 # CocoaPods
 Pods/
@@ -19,6 +28,15 @@ Podfile.lock
 # Swift Package Manager
 .build/
 Package.resolved
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
 
 # Temporary files
 *.swp
