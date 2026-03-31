@@ -9,11 +9,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Clean up any leftover temp files from previous sessions
         TempFileManager.shared.clearAllTemp()
 
-        // Check permissions
-        if !PermissionChecker.shared.hasScreenRecordingPermission() {
-            // Will be prompted when user tries to capture
-        }
-
         // Initialize controllers
         statusItemController = StatusItemController()
         hotKeyManager = HotKeyManager.shared

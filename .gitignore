@@ -47,3 +47,9 @@ fastlane/test_output
 # Secrets
 *.pem
 *.p12
+
+# DMG packages
+*.dmg
+
+# OMC state
+.omc/

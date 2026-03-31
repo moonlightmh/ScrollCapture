@@ -66,4 +66,26 @@ class StitchEngine {
         bridge.reset()
         _learnedOverlap = nil
     }
+
+    // MARK: - Rebuild Support
+
+    /// Stitch all images from scratch (for undo/rebuild functionality)
+    func stitchAll(images: [CGImage]) -> CGImage? {
+        guard !images.isEmpty else { return nil }
+
+        var currentResult: CGImage? = images.first
+
+        for i in 1..<images.count {
+            let result = stitch(baseImage: currentResult, newImage: images[i])
+            if result.success, let newResult = result.image {
+                currentResult = newResult
+            } else {
+                // If stitch fails, continue with current result
+                // but log the issue
+                print("Stitch failed at image \(i): \(result.error?.localizedDescription ?? "unknown error")")
+            }
+        }
+
+        return currentResult
+    }
 }

@@ -4,8 +4,7 @@ import SwiftUI
 class SelectionOverlayController: NSObject {
     static let shared = SelectionOverlayController()
 
-    private var overlayWindow: NSWindow?
-    private var selectionView: SelectionOverlayView?
+    private var overlayWindow: NSPanel?
     private var isSelecting = false
     private var startPoint: CGPoint = .zero
     private var eventMonitor: Any?
@@ -15,26 +14,29 @@ class SelectionOverlayController: NSObject {
     }
 
     func showOverlay() {
-        guard overlayWindow == nil else { return }
+        guard overlayWindow == nil else {
+            return
+        }
 
-        // Create fullscreen transparent window
+        // Create fullscreen transparent window using NSPanel
         let screenFrame = NSScreen.main?.frame ?? .zero
 
-        overlayWindow = NSWindow(
+        overlayWindow = NSPanel(
             contentRect: screenFrame,
-            styleMask: [.borderless],
+            styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered,
             defer: false
         )
 
-        overlayWindow?.level = .screenSaver
-        overlayWindow?.backgroundColor = .clear
+        // Important settings for mouse events
+        overlayWindow?.level = .popUpMenu
+        overlayWindow?.backgroundColor = NSColor.black.withAlphaComponent(0.001) // Almost transparent but catches events
         overlayWindow?.ignoresMouseEvents = false
-        if #available(macOS 13.0, *) {
-            overlayWindow?.collectionBehavior = [.canJoinAllApplications, .fullScreenAuxiliary]
-        } else {
-            overlayWindow?.collectionBehavior = [.fullScreenAuxiliary]
-        }
+        overlayWindow?.acceptsMouseMovedEvents = true
+        overlayWindow?.collectionBehavior = [.fullScreenAuxiliary, .canJoinAllSpaces, .transient]
+        overlayWindow?.becomesKeyOnlyIfNeeded = false
+        overlayWindow?.hidesOnDeactivate = false
+        overlayWindow?.isFloatingPanel = true
 
         // Create SwiftUI view
         let contentView = NSHostingView(rootView: SelectionOverlayView(
@@ -55,11 +57,11 @@ class SelectionOverlayController: NSObject {
         overlayWindow?.contentView = contentView
         overlayWindow?.makeKeyAndOrderFront(nil)
 
-        // Add Esc key monitor (more reliable than SwiftUI onKeyPress in NSHostingView)
+        // Add Esc key monitor
         eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             if event.keyCode == 53 { // Esc key
                 self?.cancelSelection()
-                return nil // Consume the event
+                return nil
             }
             return event
         }
@@ -72,7 +74,6 @@ class SelectionOverlayController: NSObject {
         }
         overlayWindow?.close()
         overlayWindow = nil
-        selectionView = nil
     }
 
     private func startSelection(at point: CGPoint) {
@@ -86,13 +87,17 @@ class SelectionOverlayController: NSObject {
 
     private func endSelection(_ rect: CGRect) {
         isSelecting = false
-        hideOverlay()
 
-        // Validate rect
+        // Validate rect before hiding overlay
         let validRect = validateRect(rect)
+
         if validRect.width > 10 && validRect.height > 10 {
+            // Hide overlay first
+            hideOverlay()
+            // Then call confirmSelection
             CaptureManager.shared.confirmSelection(rect: validRect)
         } else {
+            hideOverlay()
             AppState.shared.statusMessage = "请选择有效的截图区域"
             AppState.shared.captureState = .idle
         }

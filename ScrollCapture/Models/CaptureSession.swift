@@ -1,5 +1,6 @@
 import Foundation
 import CoreGraphics
+import ImageIO
 
 class CaptureSession {
     var selectedRect: CGRect?
@@ -53,5 +54,45 @@ class CaptureSession {
             return Constants.Defaults.templateHeight
         }
         return overlapHistory.reduce(0, +) / overlapHistory.count
+    }
+
+    // MARK: - Undo Support
+
+    /// Remove the last screenshot and return it
+    func removeLastScreenshot() -> CGImage? {
+        guard !screenshots.isEmpty else { return nil }
+        return screenshots.popLast()
+    }
+
+    /// Remove the last overlap record
+    func removeLastOverlap() {
+        guard !overlapHistory.isEmpty else { return }
+        overlapHistory.popLast()
+    }
+
+    /// Get all screenshots including those saved to temp files
+    func getAllScreenshots() -> [CGImage] {
+        var allImages: [CGImage] = []
+
+        // Load images from temp files first (oldest)
+        for url in tempFiles {
+            if let image = loadImageFromURL(url) {
+                allImages.append(image)
+            }
+        }
+
+        // Add in-memory screenshots (newest)
+        allImages.append(contentsOf: screenshots)
+
+        return allImages
+    }
+
+    private func loadImageFromURL(_ url: URL) -> CGImage? {
+        guard let data = try? Data(contentsOf: url),
+              let source = CGImageSourceCreateWithData(data as CFData, nil),
+              let image = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
+            return nil
+        }
+        return image
     }
 }

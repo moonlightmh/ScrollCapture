@@ -13,11 +13,24 @@ class CaptureManager {
     }
 
     func confirmSelection(rect: CGRect) {
-        guard let session = AppState.shared.currentSession else { return }
+        // Ensure we have a session
+        if AppState.shared.currentSession == nil {
+            AppState.shared.startNewSession()
+        }
+
+        guard let session = AppState.shared.currentSession else {
+            AppState.shared.captureState = .idle
+            return
+        }
+
         session.setSelectedRect(rect)
         AppState.shared.captureState = .capturing
-        AppState.shared.statusMessage = "按 Cmd+Shift+S 截图"
-        HotKeyManager.shared.registerHotkeys()
+        AppState.shared.statusMessage = "滚动后点击浮动按钮截图，或按空格键"
+
+        // Show floating control panel on main thread
+        DispatchQueue.main.async {
+            FloatingControlController.shared.show()
+        }
     }
 
     func captureScreenshot() {
@@ -124,6 +137,9 @@ class CaptureManager {
 
         if session.stitchedResult == nil {
             session.updateStitchedResult(image)
+            // Update preview
+            PreviewWindowController.shared.updatePreview(image: image)
+            AppState.shared.previewImage = image
             return
         }
 
@@ -135,6 +151,9 @@ class CaptureManager {
         if result.success, let newResult = result.image {
             session.updateStitchedResult(newResult)
             session.recordOverlap(result.overlapPixels)
+            // Update preview
+            PreviewWindowController.shared.updatePreview(image: newResult)
+            AppState.shared.previewImage = newResult
         } else {
             AppState.shared.statusMessage = "拼接警告: \(result.error?.localizedDescription ?? "未知错误")"
         }

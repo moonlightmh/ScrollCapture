@@ -29,7 +29,8 @@
 		D2A17A295E7C8E606FA99D34 /* CaptureStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82058B3AC0C8B4CF6898D40 /* CaptureStateTests.swift */; };
 		D4242461BFC86439D6B99BBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC0648DFAE12C84317F82B /* Constants.swift */; };
 		D60817BC1FA8A19351B19DBE /* CaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384CA8E08B907A568FDBF1F6 /* CaptureManager.swift */; };
-		F8DDF523C017985C0BE8E66A /* ToastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CC36C33B72AE532309C7F /* ToastController.swift */; };
+		F8DDF523C017985C0BE8E66A /* ToastController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CC36C33B72AE532309C7F /* ToastController.swift */; };		0A1B79BB4B4142BE86F1831A /* PreviewWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9ADEC22051C47EEBAF7A97F /* PreviewWindowController.swift */; };
+
 		FF050838FDA48BB770E9D3BF /* StitchResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93FFDD58D050C2682CB8A6 /* StitchResultTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +63,8 @@
 		9053DE01AA91D20E00CBF748 /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
 		977DE1F02D42CC6C2BD387D0 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		9A674396EAC49041DF04FB93 /* StitchEngineBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = StitchEngineBridge.mm; sourceTree = "<group>"; };
-		9B1CC36C33B72AE532309C7F /* ToastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastController.swift; sourceTree = "<group>"; };
+		9B1CC36C33B72AE532309C7F /* ToastController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastController.swift; sourceTree = "<group>"; };		A9ADEC22051C47EEBAF7A97F /* PreviewWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindowController.swift; sourceTree = "<group>"; };
+
 		9B8A3C7E735FFA26A8D8B751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9F87C6E72A790EE5F51D4883 /* ScrollCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F29BEED8638758146C4145 /* StitchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchEngine.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				7ACA11F298BCD702F0745A67 /* SelectionOverlayView.swift */,
 				131177A957EE14297074DBEB /* SettingsWindow.swift */,
 				9B1CC36C33B72AE532309C7F /* ToastController.swift */,
+				A9ADEC22051C47EEBAF7A97F /* PreviewWindowController.swift */,
 				805595565AC1D76EFDFEBD4A /* ToastView.swift */,
 			);
 			path = Views;
@@ -320,6 +323,7 @@
 				38CE9A6ED5C9A23D6A75F317 /* StitchResult.swift in Sources */,
 				5E548F4081DABD900503DB79 /* TempFileManager.swift in Sources */,
 				F8DDF523C017985C0BE8E66A /* ToastController.swift in Sources */,
+				0A1B79BB4B4142BE86F1831A /* PreviewWindowController.swift in Sources */,
 				B46891D3315D521AFDE909B7 /* ToastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

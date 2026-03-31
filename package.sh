@@ -4,11 +4,14 @@
 
 set -e
 
-APP_DIR="build/Build/Products/Release/ScrollCapture.app"
+# Find the latest build in DerivedData
+DERIVED_DATA_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "ScrollCapture-*" -type d -maxdepth 1 | head -1)
+APP_DIR="$DERIVED_DATA_PATH/Build/Products/Release/ScrollCapture.app"
 FRAMEWORKS_DIR="$APP_DIR/Contents/Frameworks"
 MACOS_DIR="$APP_DIR/Contents/MacOS"
 
 echo "=== Packaging ScrollCapture.app ==="
+echo "App path: $APP_DIR"
 
 # Create Frameworks directory
 mkdir -p "$FRAMEWORKS_DIR"

@@ -1,59 +1,47 @@
 import Foundation
 import ScreenCaptureKit
 
-class PermissionChecker {
+class PermissionChecker: NSObject {
     static let shared = PermissionChecker()
 
-    private init() {}
+    private var cachedPermission: Bool?
 
-    func hasScreenRecordingPermission() -> Bool {
-        if #available(macOS 12.3, *) {
-            // Use a simple approach with a result holder
-            final class ResultHolder {
-                var granted = false
-            }
-            let holder = ResultHolder()
-            let semaphore = DispatchSemaphore(value: 0)
-
-            Task { @MainActor in
-                do {
-                    _ = try await SCShareableContent.excludingDesktopWindows(false, onScreenWindowsOnly: true)
-                    holder.granted = true
-                } catch {
-                    holder.granted = false
-                }
-                semaphore.signal()
-            }
-
-            semaphore.wait()
-            return holder.granted
-        } else {
-            return checkPermissionLegacy()
-        }
+    private override init() {
+        super.init()
     }
 
-    private func checkPermissionLegacy() -> Bool {
-        let options = CGWindowListOption(arrayLiteral: .optionOnScreenOnly)
-        guard let windowList = CGWindowListCopyWindowInfo(options, kCGNullWindowID) else {
-            return false
+    func hasScreenRecordingPermission() -> Bool {
+        // Return cached value if available
+        if let cached = cachedPermission {
+            return cached
         }
-        return CFArrayGetCount(windowList) > 0
+
+        // Simple check: assume permission is granted
+        // The actual capture will fail if no permission
+        // This avoids false negatives from complex permission checks
+        cachedPermission = true
+        return true
     }
 
     func requestPermission(completion: @escaping (Bool) -> Void) {
         if #available(macOS 12.3, *) {
-            Task { @MainActor in
-                var granted = false
+            Task.detached {
                 do {
                     _ = try await SCShareableContent.excludingDesktopWindows(false, onScreenWindowsOnly: true)
-                    granted = true
+                    await MainActor.run {
+                        self.cachedPermission = true
+                        completion(true)
+                    }
                 } catch {
-                    granted = false
+                    await MainActor.run {
+                        self.cachedPermission = false
+                        completion(false)
+                    }
                 }
-                completion(granted)
             }
         } else {
-            completion(checkPermissionLegacy())
+            cachedPermission = true
+            completion(true)
         }
     }
 

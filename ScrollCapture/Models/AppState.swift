@@ -8,6 +8,8 @@ class AppState: ObservableObject {
     @Published var captureState: CaptureState = .idle
     @Published var screenshotCount: Int = 0
     @Published var statusMessage: String = ""
+    @Published var previewImage: CGImage?  // For real-time preview
+    @Published var showPreview: Bool = true // Preview window visibility
 
     var currentSession: CaptureSession?
 

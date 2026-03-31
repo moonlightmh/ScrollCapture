@@ -15,11 +15,13 @@ class StatusItemController {
     }
 
     private func setupStatusItem() {
+        // Create status item with variable length
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem?.button {
-            button.image = NSImage(systemSymbolName: "camera.viewfinder", accessibilityDescription: "ScrollCapture")
-            button.image?.isTemplate = true
+            // Use emoji text - most reliable
+            button.title = "📷"
+            button.toolTip = "ScrollCapture - 点击开始截图"
         }
 
         menu = createMenu()
@@ -138,11 +140,13 @@ class StatusItemController {
     }
 
     @objc private func endCapture() {
+        FloatingControlController.shared.hide()
         appState.captureState = .exporting
         ExportManager.shared.export()
     }
 
     @objc private func cancelCapture() {
+        FloatingControlController.shared.hide()
         appState.cancelSession()
     }
 
